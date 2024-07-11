@@ -1,9 +1,10 @@
 {
   "name": "rospanel",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && cp src/index.html dist/"
   },
   "author": "",
   "license": "ISC",
