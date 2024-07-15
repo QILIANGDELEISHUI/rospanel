@@ -1,19 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+  <!--使用自定义标签-->
+  <Index />
 </template>
-
+ 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Index from './components/Index.vue'
+ 
 export default {
   name: 'App',
+  //定义自义的组件文件，并在组件模板中使用
   components: {
-    HelloWorld
+    Index
   }
 }
 </script>
-
+ 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
