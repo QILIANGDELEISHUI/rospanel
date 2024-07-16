@@ -1,22 +1,21 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!--使用自定义标签-->
+  <!-- <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   <Index />
 </template>
- 
-<script>
 
-import Index from './components/Index.vue'
- 
-export default {
-  name: 'App',
-  //定义自义的组件文件，并在组件模板中使用
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import Index from './components/Index.vue';
+
+@Options({
   components: {
-    Index
-  }
-}
+    Index,
+  },
+})
+export default class App extends Vue {}
 </script>
- 
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
