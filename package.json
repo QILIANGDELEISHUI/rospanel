@@ -5,12 +5,15 @@
   "main": "dist-electron/index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && rimraf dist-electron && vite build && electron-builder",
+    "build": "vue-tsc --noEmit && vite build", 
+    "electron:build":"vue-tsc && rimraf dist-electron && vite build && electron-builder",
     "preview": "vite preview"
   },
   "dependencies": {
     "@arco-plugins/vite-vue": "^1.4.5",
-    "vue": "^3.4.31"
+    "element-plus": "^2.7.7",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.55.3",

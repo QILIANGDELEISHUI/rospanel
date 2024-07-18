@@ -1,0 +1,31 @@
+// src/router/index.js  
+import { createRouter, createWebHistory } from 'vue-router'  
+import Index from '../components/Index.vue'  
+import HelloWorld from '../components/HelloWorld.vue'
+  
+const routes = [  
+  {  
+    path: '/',  
+    name: 'Home',  
+    component: HelloWorld  
+  },      
+  {  
+    path: '/index',  
+    name: 'index',  
+    component: Index  ,
+    redirect: 'index/menu1',
+    //路由嵌套
+    children:[
+        {path: '/index/menu1',component: () => import('../components/Main.vue')},
+        {path: '/index/menu2',component: () => import('../components/Main2.vue')},
+    ]
+  },  
+
+]  
+  
+const router = createRouter({  
+  history: createWebHistory(process.env.BASE_URL),  
+  routes  
+})  
+  
+export default router
