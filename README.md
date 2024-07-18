@@ -1,34 +1,5 @@
-# rospanel
-本项目当前的业务需求为显示超声波模块测到的6个距离。
+# Vue 3 + TypeScript + Vite
 
-## 环境配置
-node = v16.20.2
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-npm = 8.19.4
-
-再装个cnpm
-## 使用说明
-1. 依赖安装
-```
-cnpm install
-```
-注：electron换国内镜像源也不好下，这里最好用cnpm
-
-2. dev模式
-```
-cnpm run serve
-```
-
-3. production，打包桌面应用程序
-```
-cnpm run build
-cnpm run electron:build
-```
-最终打包后的程序在dist目录下的.AppImage文件
-
-
-
-
-
-## Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).

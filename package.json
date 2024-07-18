@@ -1,65 +1,74 @@
 {
   "name": "rospanel",
-  "version": "0.1.0",
   "private": true,
-  "description": "this is test vue and electron project",
-  "author": "Yuankun Zeng",
+  "version": "0.0.0",
+  "main": "dist-electron/index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "electron:build": "vue-cli-service electron:build",
-    "electron:serve": "vue-cli-service electron:serve",
-    "postinstall": "electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps"
+    "dev": "vite",
+    "build": "vue-tsc && rimraf dist-electron && vite build && electron-builder",
+    "preview": "vite preview"
   },
-  "main": "background.js",
   "dependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
-    "core-js": "^3.8.3",
-    "element-plus": "^2.7.7",
-    "vue": "^3.2.13",
-    "vue-class-component": "^8.0.0-0"
+    "@arco-plugins/vite-vue": "^1.4.5",
+    "vue": "^3.4.31"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "@vue/eslint-config-typescript": "^9.1.0",
-    "@vue/tsconfig": "^0.5.1",
-    "electron": "^18.2.1",
+    "@arco-design/web-vue": "^2.55.3",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "electron": "^31.2.1",
     "electron-builder": "^24.13.3",
     "electron-devtools-installer": "^3.2.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "ts-loader": "^8.2.0",
-    "typescript": "^5.5.3",
-    "vue-cli-plugin-electron-builder": "^2.1.1"
+    "rimraf": "^6.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4",
+    "vite-plugin-electron": "^0.28.7",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vue-tsc": "^2.0.24"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+  "build": {
+    "appId": "com.electron.desktop",
+    "productName": "electron",
+    "asar": true,
+    "copyright": "Copyright © 2022 electron",
+    "directories": {
+      "output": "release/${version}"
     },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript"
+    "files": [
+      "./dist",
+      "./package.json",
+      "./dist-electron"
     ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
+    "mac": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        "dmg"
+      ]
     },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080"
+      }
+    ],
+    "releaseInfo": {
+      "releaseNotes": "版本更新的具体内容"
+    }
+  }
 }
