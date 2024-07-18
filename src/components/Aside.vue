@@ -1,10 +1,10 @@
 <template>
     <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-        <el-radio-button :label="false">expand</el-radio-button>
-        <el-radio-button :label="true">collapse</el-radio-button>
+        <el-radio-button :value="false">expand</el-radio-button>
+        <el-radio-button :value="true">collapse</el-radio-button>
     </el-radio-group>
     <el-menu default-active="index/menu1" class="el-menu-vertical-demo dark-mode" :collapse="isCollapse" @open="handleOpen"
-        @close="handleClose" router>
+        @close="handleClose" @select="handleSelect" router>
         <!-- <el-sub-menu index="1" popper-class="dark-mode">
             <template #title>
                 <el-icon>
@@ -29,15 +29,13 @@
             <el-icon><icon-menu /></el-icon>
             <template #title>Navigator Two</template>
         </el-menu-item> -->
-        <el-menu-item >
-            <router-link to="index/menu2" />
+        <el-menu-item index="index/menu2">
             <el-icon>
                 <document />
             </el-icon>
             <template #title>Navigator Three</template>
         </el-menu-item>
-        <el-menu-item >
-            <router-link to="index/menu1" />
+        <el-menu-item index="index/menu1">
             <el-icon>
                 <setting />
             </el-icon>
@@ -62,6 +60,9 @@ const handleOpen = (key: string, keyPath: string[]) => {
 const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }
+const handleSelect = (index, indexPath) => {  
+    router.push(index); // 使用Vue Router的push方法实现跳转  
+};  
 
 </script>
 

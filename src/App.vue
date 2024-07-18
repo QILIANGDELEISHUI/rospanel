@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import Index from './components/Index.vue'
+// import Index from './components/Index.vue'
+// components: {
+// 		Index
+// 	}
 </script>
 
 <template>
@@ -11,7 +14,8 @@ import Index from './components/Index.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div> -->
-  <Index />
+   <router-view />
+    <!-- <Index /> -->
    
 </template>
 
@@ -28,4 +32,5 @@ import Index from './components/Index.vue'
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
+
 </style>

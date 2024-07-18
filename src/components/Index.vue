@@ -1,15 +1,18 @@
 <template>
 	<div class="common-layout">
-		<el-container>
+		<el-container class="home-container">
 			<el-header class="header">
 				<Header />
 			</el-header>
-			<el-container>
+			<el-container direction="horizontal" class="container">
 				<el-aside width="200px" class="aside">
 					<Aside />
+					 Aside
 				</el-aside>
 				<el-main class="main">
-					<router-view />
+					<!-- <router-view /> -->
+					<Main />
+					 Main
 				</el-main>
 			</el-container>
 		</el-container>
@@ -20,25 +23,32 @@
 // 如果你需要在这个组件中使用Element Plus的组件，请确保已经安装并引入了Element Plus  
 // 这里的示例并没有直接使用Element Plus的组件，除了可能的注释说明  
 import Header from "./Header.vue"
-// import Main from "./Main.vue"
+import Main from "./Main.vue"
 import Aside from "./Aside.vue"
 export default {
 	name: 'Index',
 	components: {
 		Header,
-		// Main,
+		Main,
 		Aside
 	}
 }  
 </script>
 
 <style scoped>
+
+.home-container {
+	height:100%;
+}
 .container {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	/* height: 100vh; */
+	height: 100%
 	/* 占据整个视窗的高度 */
 }
+
+
 
 .header,
 .footer {
@@ -59,7 +69,7 @@ export default {
 	/* 侧边栏宽度 */
 	background-color: #0f428e;
 	/* 侧边栏背景色 */
-	padding: 20px;
+	/* padding: 20px; */
 }
 
 .main {

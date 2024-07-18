@@ -37,10 +37,10 @@
 		</el-row>
 	</div>
 </template>
-<script>
-	export default {
-		name: 'Main'
-	}
+<script setup lang="ts">
+	// export default {
+	// 	name: 'Main'
+	// }
 </script>
 <style>
 </style>

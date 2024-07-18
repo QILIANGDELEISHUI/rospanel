@@ -16,8 +16,8 @@ const routes = [
     redirect: 'index/menu1',
     //路由嵌套
     children:[
-        {path: '/index/menu1',component: () => import('../components/Main.vue')},
-        {path: '/index/menu2',component: () => import('../components/Main2.vue')},
+        {path: 'menu1',component: () => import('../components/Main.vue')},
+        {path: 'menu2',component: () => import('../components/Main2.vue')},
     ]
   },  
 
