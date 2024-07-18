@@ -20,13 +20,13 @@
 // 如果你需要在这个组件中使用Element Plus的组件，请确保已经安装并引入了Element Plus  
 // 这里的示例并没有直接使用Element Plus的组件，除了可能的注释说明  
 import Header from "./Header.vue"
-import Main from "./Main.vue"
+// import Main from "./Main.vue"
 import Aside from "./Aside.vue"
 export default {
 	name: 'Index',
 	components: {
 		Header,
-		Main,
+		// Main,
 		Aside
 	}
 }  

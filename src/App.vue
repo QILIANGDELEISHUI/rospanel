@@ -12,6 +12,7 @@ import Index from './components/Index.vue'
     </a>
   </div> -->
   <Index />
+   
 </template>
 
 <style scoped>

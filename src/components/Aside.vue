@@ -5,7 +5,7 @@
     </el-radio-group>
     <el-menu default-active="index/menu1" class="el-menu-vertical-demo dark-mode" :collapse="isCollapse" @open="handleOpen"
         @close="handleClose" router>
-        <el-sub-menu index="1" popper-class="dark-mode">
+        <!-- <el-sub-menu index="1" popper-class="dark-mode">
             <template #title>
                 <el-icon>
                     <location />
@@ -24,18 +24,20 @@
                 <template #title><span>item four</span></template>
                 <el-menu-item index="1-4-1">item one</el-menu-item>
             </el-sub-menu>
-        </el-sub-menu>
-        <el-menu-item index="2">
+        </el-sub-menu> -->
+        <!-- <el-menu-item index="2">
             <el-icon><icon-menu /></el-icon>
             <template #title>Navigator Two</template>
-        </el-menu-item>
-        <el-menu-item index="index/menu2" >
+        </el-menu-item> -->
+        <el-menu-item >
+            <router-link to="index/menu2" />
             <el-icon>
                 <document />
             </el-icon>
             <template #title>Navigator Three</template>
         </el-menu-item>
-        <el-menu-item index="index/menu1">
+        <el-menu-item >
+            <router-link to="index/menu1" />
             <el-icon>
                 <setting />
             </el-icon>
