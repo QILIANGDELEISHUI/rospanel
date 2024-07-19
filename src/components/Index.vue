@@ -1,81 +1,57 @@
 <template>
-	<div class="common-layout">
-		<el-container class="home-container">
-			<el-header class="header">
-				<Header />
-			</el-header>
-			<el-container direction="horizontal" class="container">
-				<el-aside width="200px" class="aside">
-					<Aside />
-					 Aside
-				</el-aside>
-				<el-main class="main">
-					<!-- <router-view /> -->
-					<Main />
-					 Main
-				</el-main>
-			</el-container>
-		</el-container>
-	</div>
+  <div>
+    <el-container>
+      <el-header>
+        <Header />
+      </el-header>
+      <el-container>
+        <el-aside width="200px">
+          <Aside />
+        </el-aside>
+        <el-main>
+          <router-view />
+        </el-main>
+      </el-container>
+      <!-- <el-footer>Footer</el-footer> -->
+    </el-container>
+  </div>
 </template>
 
 <script>
-// 如果你需要在这个组件中使用Element Plus的组件，请确保已经安装并引入了Element Plus  
-// 这里的示例并没有直接使用Element Plus的组件，除了可能的注释说明  
 import Header from "./Header.vue"
-import Main from "./Main.vue"
+// import Main from "./Main.vue"
 import Aside from "./Aside.vue"
 export default {
-	name: 'Index',
-	components: {
-		Header,
-		Main,
-		Aside
-	}
-}  
+  name: 'Index',
+  components: {
+    Header,
+    Aside
+  }
+}
 </script>
-
-<style scoped>
-
-.home-container {
-	height:100%;
-}
-.container {
-	display: flex;
-	flex-direction: column;
-	/* height: 100vh; */
-	height: 100%
-	/* 占据整个视窗的高度 */
+<style>
+.el-header,
+.el-footer {
+  background-color: #B3C0D1;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
 }
 
-
-
-.header,
-.footer {
-	padding: 20px;
-	text-align: center;
-	background-color: #c83030;
-	/* 示例背景色 */
+.el-aside {
+  background-color: #D3DCE6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
 }
 
-.content {
-	display: flex;
-	flex: 1;
-	/* 占据剩余空间 */
+.el-main {
+  background-color: #E9EEF3;
+  color: #333;
+  text-align: center;
 }
 
-.aside {
-	width: 200px;
-	/* 侧边栏宽度 */
-	background-color: #0f428e;
-	/* 侧边栏背景色 */
-	/* padding: 20px; */
-}
-
-.main {
-	flex-grow: 1;
-	/* 主内容区占据剩余空间 */
-	background-color: #0f8e39;
-	padding: 20px;
+body>.el-container {
+  margin-bottom: 40px;
 }
 </style>

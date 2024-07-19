@@ -5,6 +5,7 @@ import App from'./App.vue'
 //引入
 import router from './router'
 
+import './assets/global.css';
 //建立app对象
 const app = createApp(App)
 
