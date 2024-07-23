@@ -1,1 +1,3 @@
-"use strict";const o=require("os");console.log("platform",o.platform());
+"use strict";
+const os = require("os");
+console.log("platform", os.platform());
