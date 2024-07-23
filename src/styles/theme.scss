@@ -1,0 +1,24 @@
+// theme.scss
+/** element内置暗黑主题 */
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
+
+// 可以进行一些样式的覆盖
+html {
+  --v-bg-color: #ffffff; // 新增
+}
+
+html.dark {
+  --v-bg-color: #141414; // 新增
+  --el-color-primary: #ff4040; // 覆盖
+  --el-color-success: #ff7340;
+  --el-color-warning: #ff00cd;
+  --el-color-error: #009dff;
+}
+
+html.beach {
+  --v-bg-color: #f8d805; // 新增
+  --el-color-primary: #ff8940; // 覆盖
+  --el-color-success: #ff7340;
+  --el-color-warning: #ff00cd;
+  --el-color-error: #009dff;
+}

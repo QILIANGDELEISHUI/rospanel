@@ -6,18 +6,20 @@ import HelloWorld from '../components/HelloWorld.vue'
 const routes = [  
   {  
     path: '/',  
-    name: 'Home',  
+    name: 'Home',
+    redirect: '/index',
     component: HelloWorld  
   },      
   {  
     path: '/index',  
     name: 'index',  
     component: Index  ,
-    redirect: 'index/menu1',
+    redirect: 'index/panel',
     //路由嵌套
     children:[
-        {path: 'menu1',component: () => import('../components/Main.vue')},
-        {path: 'menu2',component: () => import('../components/Main2.vue')},
+        {path: 'panel',component: () => import('../components/Panel.vue')},
+        {path: 'setting',component: () => import('../components/Settings.vue')},
+        {path: 'test',component: () => import('../components/Test.vue')},
     ]
   },  
 
