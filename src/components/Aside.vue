@@ -3,6 +3,9 @@
         <el-radio-button :value="false">expand</el-radio-button>
         <el-radio-button :value="true">collapse</el-radio-button>
     </el-radio-group>
+  <div>
+    <el-button type="primary" :icon="myIcon" circle />
+  </div>
     <el-menu default-active="panel" class="el-menu-vertical-demo dark-mode" :collapse="isCollapse" @open="handleOpen"
         @close="handleClose" router>
 <!--       <el-sub-menu index="1" popper-class="dark-mode">-->
@@ -57,15 +60,22 @@ import {
     Menu as IconMenu,
     Location,
     Setting,
+    Edit,
+    Check,
+    CaretRight,
+    CaretLeft
 } from '@element-plus/icons-vue'
 
 const isCollapse = ref(true)
+const myIcon = ref(isCollapse.value == true ? "el-icon-edit" : "el-icon-edit")
 const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
-};  
+};
+
+
 
 </script>
 

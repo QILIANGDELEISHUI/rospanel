@@ -1,33 +1,60 @@
 <template>
-  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
-    @select="handleSelect" >
-    <el-menu-item index="0">
-      <img style="width: 60px" src="/src/assets/vue.svg" alt="Element logo" />
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false" >
+    <el-menu-item index="hello" @click="goToHello">
+        <img style="width: 60px" src="/src/assets/ros_.png" alt="Element logo" />
     </el-menu-item>
     <div class="flex-grow" />
+    <el-menu-item index="main" @click="goToMain" class="custom-menu-item">
+      <el-icon>
+        <House></House>
+      </el-icon>
+     <p >main</p>
+    </el-menu-item>
     <el-menu-item index="1">
       <Time />
     </el-menu-item>
     <el-menu-item index="1">
       <SwitchDark></SwitchDark>
     </el-menu-item>
+
   </el-menu>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-
 import Time from './Time.vue'
-const activeIndex = ref('1')
-const handleSelect = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+import {useRouter,useRoute} from 'vue-router'
+import {ref} from 'vue'
+import {
+  House
+} from '@element-plus/icons-vue'
+const router = useRouter();
+const route = useRoute();
+const activeIndex = ref(localStorage.getItem("headerIndex") || "hello");
+
+const goToMain = () => {
+  router.replace("/main")
+  console.log(route.path);
+  localStorage.setItem("headerIndex","main")
 }
+
+const goToHello = () => {
+  router.replace("/hello")
+  console.log(route.path);
+  localStorage.setItem("headerIndex","hello")
+}
+//
+// onMounted(()=> {
+//   activeIndex
+// })
 
 </script>
 
 <style>
 .flex-grow {
   flex-grow: 1;
+}
+.custom-menu-item {
+  font-size: 20px;
 }
 
 

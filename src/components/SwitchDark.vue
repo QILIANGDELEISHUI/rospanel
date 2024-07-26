@@ -20,8 +20,10 @@ const changeTheme = () => {
   console.log(theme?.value)
   if (theme?.value === 'light') {
     setTheme?.('dark');
+    localStorage.setItem("selectedTheme",'dark');
   } else {
     setTheme?.('light');
+    localStorage.setItem("selectedTheme",'light');
   }
 };
 </script>

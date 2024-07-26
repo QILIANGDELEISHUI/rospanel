@@ -1,34 +1,32 @@
 <template>
   <div class="common-layout">
     <el-container class="container">
-      <el-header class="header">
-        <Header />
-      </el-header>
-      <el-main class="main">
+        <el-aside width="200px" class="aside">
+          <Aside />
+        </el-aside>
+        <el-main class="main">
           <router-view />
-      </el-main>
+        </el-main>
     </el-container>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Header from "./Header.vue"
-import Aside from "./Aside.vue"
 </script>
 
 <style scoped>
 .container {
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   height: 100vh;
   /* 占据整个视窗的高度 */
 }
 
 .header,
 .footer {
-  //padding: 20px;
-  //text-align: center;
-  //background-color: #c83030;
+//padding: 20px;
+//text-align: center;
+//background-color: #c83030;
   /* 示例背景色 */
 }
 

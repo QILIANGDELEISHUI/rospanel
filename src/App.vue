@@ -57,6 +57,5 @@ provide('theme', {
 }
 .bg {
   background-color: var(--v-bg-color);
-
 }
 </style>
