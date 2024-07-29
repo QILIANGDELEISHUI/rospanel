@@ -1,37 +1,7 @@
 <template>
-     <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-        <el-radio-button :value="false">expand</el-radio-button>
-        <el-radio-button :value="true">collapse</el-radio-button>
-    </el-radio-group>
-  <div>
-    <el-button type="primary" :icon="myIcon" circle />
-  </div>
+    <el-button :type=myType :icon=myIcon circle @click="change"   display: flex justify-content: center/>
     <el-menu default-active="panel" class="el-menu-vertical-demo dark-mode" :collapse="isCollapse" @open="handleOpen"
         @close="handleClose" router>
-<!--       <el-sub-menu index="1" popper-class="dark-mode">-->
-<!--            <template #title>-->
-<!--                <el-icon>-->
-<!--                    <location />-->
-<!--                </el-icon>-->
-<!--                <span>Navigator One</span>-->
-<!--            </template>-->
-<!--            <el-menu-item-group>-->
-<!--                <template #title><span>Group One</span></template>-->
-<!--                <el-menu-item index="1-1">item one</el-menu-item>-->
-<!--                <el-menu-item index="1-2">item two</el-menu-item>-->
-<!--            </el-menu-item-group>-->
-<!--            <el-menu-item-group title="Group Two">-->
-<!--                <el-menu-item index="1-3">item three</el-menu-item>-->
-<!--            </el-menu-item-group>-->
-<!--            <el-sub-menu index="1-4">-->
-<!--                <template #title><span>item four</span></template>-->
-<!--                <el-menu-item index="1-4-1">item one</el-menu-item>-->
-<!--            </el-sub-menu>-->
-<!--        </el-sub-menu>-->
-<!--        <el-menu-item index="2">-->
-<!--            <el-icon><icon-menu /></el-icon>-->
-<!--            <template #title>Navigator Two</template>-->
-<!--        </el-menu-item>-->
         <el-menu-item index="panel">
             <el-icon>
                 <location />
@@ -50,11 +20,17 @@
         </el-icon>
         <template #title>test</template>
       </el-menu-item>
+      <el-menu-item index="test2">
+        <el-icon>
+          <document />
+        </el-icon>
+        <template #title>test2</template>
+      </el-menu-item>
     </el-menu>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import {computed, ref} from 'vue'
 import {
     Document,
     Menu as IconMenu,
@@ -67,7 +43,13 @@ import {
 } from '@element-plus/icons-vue'
 
 const isCollapse = ref(true)
-const myIcon = ref(isCollapse.value == true ? "el-icon-edit" : "el-icon-edit")
+const myIcon = computed(()=>isCollapse.value == true?CaretRight:CaretLeft)
+const myType = computed(()=>isCollapse.value == true? "primary" : "success")
+
+const change = () => {
+  isCollapse.value = isCollapse.value != true
+}
+
 const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }

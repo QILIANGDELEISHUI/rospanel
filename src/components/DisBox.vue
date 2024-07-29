@@ -34,7 +34,8 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from 'vue';
+import { PropType,ref,computed} from 'vue';
+import {useRosStore} from "../stores/ros.js";
 import {
   ArrowRight,
   CaretBottom,
@@ -42,17 +43,15 @@ import {
   Warning,Document
 } from '@element-plus/icons-vue'
 
+const store = useRosStore();
+
+const dis = ref(computed(()=>store.distances[props.id]));
 const props = defineProps({
-  dis: {
-    type: Number as PropType<number>,
-    required: true,
-  },
   id: {
     type: Number as PropType<number>,
     required: true,
   },
 })
-
 </script>
 
 <style scoped>

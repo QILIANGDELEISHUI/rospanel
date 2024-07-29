@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useRosStore = defineStore('ros', {
     state: () => {
         return {
-            distances : [0,1,2,3,4,5],
+            distances : [0,0,0,0,0,0],
         }
     },
     getters: {
@@ -14,5 +14,8 @@ export const useRosStore = defineStore('ros', {
         // increment() {
         //     this.count++
         // }
+        updateDis(distances)  {
+            this.distances = distances;
+        }
     }
 })

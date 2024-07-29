@@ -21,6 +21,7 @@ const routes = [
           {path: 'panel',component: () => import('../components/Panel.vue')},
           {path: 'setting',component: () => import('../components/Settings.vue')},
           {path: 'test',component: () => import('../components/Test.vue')},
+          {path: 'test2',component: () => import('../components/Test2.vue')},
         ]
       },
       {

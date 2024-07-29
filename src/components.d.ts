@@ -40,6 +40,7 @@ declare module 'vue' {
     Settings: typeof import('./components/Settings.vue')['default']
     SwitchDark: typeof import('./components/SwitchDark.vue')['default']
     Test: typeof import('./components/Test.vue')['default']
+    Test2: typeof import('./components/Test2.vue')['default']
     ThemeSelector: typeof import('./components/ThemeSelector.vue')['default']
     Time: typeof import('./components/Time.vue')['default']
   }
