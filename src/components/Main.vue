@@ -18,7 +18,7 @@
 .container {
   display: flex;
   //flex-direction: column;
-  height: 100vh;
+  height: 100%;
   /* 占据整个视窗的高度 */
 }
 
@@ -37,11 +37,11 @@
 }
 
 .aside {
-  width: 150px;
+  width: 120px;
   /* 侧边栏宽度 */
   background-color: var(--v-bg-color);
   /* 侧边栏背景色 */
-  padding: 20px;
+  padding: 5px;
 }
 
 .main {

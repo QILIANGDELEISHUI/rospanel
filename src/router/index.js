@@ -22,6 +22,7 @@ const routes = [
           {path: 'setting',component: () => import('../components/Settings.vue')},
           {path: 'test',component: () => import('../components/Test.vue')},
           {path: 'test2',component: () => import('../components/Test2.vue')},
+          {path: 'battery',component: () => import('../components/BatteryHealth.vue')},
         ]
       },
       {

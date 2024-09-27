@@ -20,12 +20,12 @@ import Aside from "./Aside.vue"
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   /* 占据整个视窗的高度 */
 }
 
-.header,
-.footer {
+.header {
+  height:40px;
   //padding: 20px;
   //text-align: center;
   //background-color: #c83030;

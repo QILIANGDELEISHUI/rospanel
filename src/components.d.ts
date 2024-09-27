@@ -8,6 +8,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Aside: typeof import('./components/Aside.vue')['default']
+    Battery: typeof import('./components/Battery.vue')['default']
+    BatteryHealth: typeof import('./components/BatteryHealth.vue')['default']
+    BatteryIcon: typeof import('./components/MyBatteryIcon.vue')['default']
+    Charge: typeof import('./components/BatteryHealth.vue')['default']
     DisBox: typeof import('./components/DisBox.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -15,6 +19,7 @@ declare module 'vue' {
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElLink: typeof import('element-plus/es')['ElLink']
@@ -34,6 +39,7 @@ declare module 'vue' {
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Index: typeof import('./components/Index.vue')['default']
     Main: typeof import('./components/Main.vue')['default']
+    MyBatteryIcon: typeof import('./components/MyBatteryIcon.vue')['default']
     Panel: typeof import('./components/Panel.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

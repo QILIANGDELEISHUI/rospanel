@@ -14,18 +14,24 @@
             </el-icon>
             <template #title>setting</template>
         </el-menu-item>
-      <el-menu-item index="test">
-        <el-icon>
-          <document />
-        </el-icon>
-        <template #title>test</template>
-      </el-menu-item>
-      <el-menu-item index="test2">
-        <el-icon>
-          <document />
-        </el-icon>
-        <template #title>test2</template>
-      </el-menu-item>
+        <el-menu-item index="battery">
+          <el-icon>
+            <Cpu />
+          </el-icon>
+          <template #title>battery</template>
+        </el-menu-item>
+        <el-menu-item index="test">
+          <el-icon>
+            <document />
+          </el-icon>
+          <template #title>test</template>
+        </el-menu-item>
+        <el-menu-item index="test2">
+          <el-icon>
+            <document />
+          </el-icon>
+          <template #title>test2</template>
+        </el-menu-item>
     </el-menu>
 </template>
 
@@ -39,8 +45,10 @@ import {
     Edit,
     Check,
     CaretRight,
-    CaretLeft
+    CaretLeft,
+    Cpu
 } from '@element-plus/icons-vue'
+import BatteryIcon from "./Test2.vue";
 
 const isCollapse = ref(true)
 const myIcon = computed(()=>isCollapse.value == true?CaretRight:CaretLeft)
@@ -63,7 +71,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 180px;
+    width: 100px;
     min-height: 400px;
 }
 </style>

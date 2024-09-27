@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>当前时间: {{ currentTime }}</h1>
+    <h1>{{ currentTime }}</h1>
   </header>
 </template>
 
@@ -36,5 +36,6 @@ header {
   /* background-color: #ffffff; */
   padding: 0px 0px;
   text-align: center;
+  font-size: 10px;
 }
 </style>

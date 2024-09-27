@@ -5,7 +5,6 @@
       @change="changeTheme"
       :active-icon="Sunny"
       :inactive-icon="Moon"
-      size="large"
   />
 </template>
 
